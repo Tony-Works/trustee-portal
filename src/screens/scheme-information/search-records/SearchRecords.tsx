@@ -10,9 +10,9 @@ import { useForm } from 'react-hook-form';
 import { styled, Box, Grid, Button } from '@mui/material';
 import Form from 'components/form';
 
-interface A {
+type SchemeInformation = {
   memberNameInEnglish: string;
-}
+};
 
 const FormContainer = styled(Box)({
   display: 'flex',
@@ -28,13 +28,13 @@ const Divider = styled(Box)({
 });
 
 const SearchRecords = (): ReactElement => {
-  const dualInputForm = useForm<A>({
+  const dualInputForm = useForm<SchemeInformation>({
     shouldUnregister: false,
   });
 
   return (
     <Card title="Search Records" action={<ExpandMoreIcon />}>
-      <Form<A> onSubmit={() => {}} {...dualInputForm}>
+      <Form<SchemeInformation> onSubmit={() => {}} {...dualInputForm}>
         <FormContainer>
           <Grid container spacing={3}>
             <Grid item xs={3}>
