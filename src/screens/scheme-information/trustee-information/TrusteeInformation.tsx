@@ -17,8 +17,12 @@ const Divider = styled(Box)({
   backgroundColor: '#676766',
 });
 
-const Action = styled(Box)({
+const SchemeBox = styled(Box)({
   display: 'flex',
+  justifyContent: 'space-between',
+});
+
+const Action = styled(Box)({
   alignItems: 'right',
   justifyContent: 'right',
 });
@@ -29,9 +33,9 @@ const TrusteeInformation = (): ReactElement => {
       title="Section - 1 Trustee Information"
       action={
         <Action>
-          <ExpandMoreIcon />
-          <Button variant="contained" color="primary">
-            Change Scheme Name
+          <ExpandMoreIcon sx={{ ml: 15 }} />
+          <Button variant="contained" color="primary" sx={{ display: 'block' }}>
+            Edit Information
           </Button>
         </Action>
       }>
@@ -58,9 +62,13 @@ const TrusteeInformation = (): ReactElement => {
         <DefinitionItem term="Trustee’s Website">https://www.abc.com/</DefinitionItem>
       </DefinitionList>
       <Divider />
-      <Typography variant="h5" color="primary">
-        Section - 2 Scheme Information
-      </Typography>
+      <SchemeBox>
+        <Typography variant="h5" color="primary">
+          Section - 2 Scheme Information
+        </Typography>
+        <Button variant="contained">CHANGE SCHEME NAME</Button>
+      </SchemeBox>
+
       <Table<SchemeInformation>
         name="Cases Result"
         title="MPF Scheme A  |  強積⾦優選計劃甲"
