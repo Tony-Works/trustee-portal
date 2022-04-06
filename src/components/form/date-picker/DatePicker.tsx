@@ -13,6 +13,8 @@ interface InputProps extends MuiInputProps {
   'data-testid': string;
 }
 
+type DateFormat = 'MM/DD/YYYY' | 'YYYY/MM/DD';
+
 interface DatePickerProps {
   name: string;
   mask?: string;
