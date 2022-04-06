@@ -11,7 +11,6 @@ import RadioGroup from './radio-group';
 import Select from './select';
 import TextField from './text-field';
 import DatePicker from './date-picker';
-import Dropzone from './dropzone';
 
 interface FormProps<Type> extends PropsWithChildren<UseFormReturn<Type>> {
   onSubmit: SubmitHandler<Type>;
@@ -34,6 +33,5 @@ Form.RadioGroup = RadioGroup;
 Form.Select = Select;
 Form.TextField = TextField;
 Form.DatePicker = DatePicker;
-Form.Dropzone = Dropzone;
 
 export default Form;
