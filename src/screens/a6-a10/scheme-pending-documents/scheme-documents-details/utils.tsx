@@ -1,36 +1,89 @@
 import type { CellProps, Column } from 'react-table';
-import { Scheme } from 'models';
+import { SchemeDocuments } from 'models';
 import { ReactNode } from 'react';
-import { Button, Stack } from '@mui/material';
+import { Stack, Tooltip } from '@mui/material';
+import ViewIcon from 'assets/img/view_btn.svg';
 
-export const data: Scheme[] = [
+export const data: SchemeDocuments[] = [
   {
-    requestDt: '13/12/2021 09:23:12',
-    referenceNo: '66373384848788',
+    nmDocs: 'Pending',
+    vrsDocs: 'Pending',
+    asOfDt: '',
+    effctvDt: '13/12/2021',
     status: 'Pending',
-    preparerId: 'Preparer A',
-    supervisorId: 'Supervisor A',
+    preparer: 'Preparer A',
+    supervsor: 'Supervisor A',
+  },
+  {
+    nmDocs: 'Pending',
+    vrsDocs: 'Pending',
+    asOfDt: '',
+    effctvDt: '13/12/2021',
+    status: 'Pending',
+    preparer: 'Preparer A',
+    supervsor: 'Supervisor A',
+  },
+  {
+    nmDocs: 'Pending',
+    vrsDocs: 'Pending',
+    asOfDt: '13/12/2021',
+    effctvDt: '13/12/2021',
+    status: 'Pending',
+    preparer: 'Preparer A',
+    supervsor: 'Supervisor A',
+  },
+  {
+    nmDocs: 'Pending',
+    vrsDocs: 'Pending',
+    asOfDt: '',
+    effctvDt: '13/12/2021',
+    status: 'Pending',
+    preparer: 'Preparer A',
+    supervsor: 'Supervisor A',
+  },
+  {
+    nmDocs: 'Pending',
+    vrsDocs: 'Pending',
+    asOfDt: '13/12/2021',
+    effctvDt: '',
+    status: 'Pending',
+    preparer: 'Preparer A',
+    supervsor: 'Supervisor A',
+  },
+  {
+    nmDocs: 'Pending',
+    vrsDocs: 'Pending',
+    asOfDt: '',
+    effctvDt: '13/12/2021',
+    status: 'Pending',
+    preparer: 'Preparer A',
+    supervsor: 'Supervisor A',
   },
 ];
 
-export const columns: Column<Scheme>[] = [
-  { Header: 'Request Date', accessor: 'requestDt' },
-  { Header: 'Reference Number', accessor: 'referenceNo' },
+export const columns: Column<SchemeDocuments>[] = [
+  { Header: 'Name of Document', accessor: 'nmDocs' },
+  { Header: 'Version of the Document', accessor: 'vrsDocs' },
+  { Header: 'As of Date', accessor: 'asOfDt' },
+  { Header: 'Effective Date', accessor: 'effctvDt' },
   { Header: 'Status', accessor: 'status' },
-  { Header: 'Preparer User ID', accessor: 'preparerId' },
-  { Header: 'Supervisor  User ID', accessor: 'supervisorId' },
+  { Header: 'Preparer User ID', accessor: 'preparer' },
+  { Header: 'Supervisor  User ID', accessor: 'supervsor' },
   {
     Header: 'Action',
     disableSortBy: true,
-    Cell: (_cellProps: CellProps<Scheme>): ReactNode => {
+    Cell: (_cellProps: CellProps<SchemeDocuments>): ReactNode => {
       return (
         <Stack spacing={2} direction="row">
-          <Button variant="outlined" sx={{ borderColor: '#f73378', color: '#f73378' }}>
-            Delete
-          </Button>
-          <Button variant="contained" color="warning">
-            View
-          </Button>
+          <Tooltip title="Scheme Information" arrow>
+            <img
+              src={ViewIcon}
+              alt=""
+              style={{
+                cursor: 'pointer',
+              }}
+            />
+          </Tooltip>
         </Stack>
       );
     },

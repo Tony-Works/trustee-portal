@@ -1,11 +1,17 @@
-import Card from 'components/card';
 import { ReactElement } from 'react';
+
+import { SchemeApproval } from 'models';
+import { columns, data } from './utils';
+import Table from 'components/table';
 
 const UploadPendingApproval = (): ReactElement => {
   return (
-    <Card title="Upload New Scheme Document - Pending for Approval">
-      <div>Upload New Scheme Document - Pending for Approval</div>
-    </Card>
+    <Table<SchemeApproval>
+      name="Cases Result"
+      title="Upload New Scheme Documents"
+      columns={columns}
+      data={data}
+    />
   );
 };
 
