@@ -1,11 +1,16 @@
-import Card from 'components/card';
+import Table from 'components/table';
+import { SchemeDocuments } from 'models';
 import { ReactElement } from 'react';
+import { columns, data } from './utils';
 
 const SchemeDocumentsDetails = (): ReactElement => {
   return (
-    <Card title="MPF Scheme A - Scheme Documents">
-      <div>MPF Scheme A - Scheme Documents</div>
-    </Card>
+    <Table<SchemeDocuments>
+      name="Cases Result"
+      title="MPF Scheme A - Scheme Documents"
+      columns={columns}
+      data={data}
+    />
   );
 };
 
