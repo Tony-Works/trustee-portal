@@ -3,7 +3,6 @@ import { createTheme } from '@mui/material/styles';
 import type { Shadows } from '@mui/material/styles/shadows';
 
 const theme = createTheme({
-  spacing: (factor: number) => `${0.5 * factor}rem`,
   mixins: {
     toolbar: {
       minHeight: 56,
@@ -11,7 +10,11 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#222222',
+      main: '#2196f3',
+    },
+    neutral: {
+      main: '#64748B',
+      contrastText: '#fff',
     },
     background: {
       default: '#F5F5F5 ',
@@ -60,8 +63,8 @@ export default createTheme(theme, {
         root: {
           borderRadius: '50rem',
           boxShadow: '0 .125rem .25rem rgba(0,0,0,.075)',
-          paddingLeft: theme.spacing(5),
-          paddingRight: theme.spacing(5),
+          paddingLeft: theme.spacing(3),
+          paddingRight: theme.spacing(3),
           fontWeight: theme.typography.fontWeightBold,
           textTransform: 'none',
         },
@@ -81,6 +84,26 @@ export default createTheme(theme, {
     MuiRadio: {
       defaultProps: {
         color: 'warning',
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          fontSize: theme.spacing(1.5),
+        },
+        shrink: {
+          transform: 'translate(0, 1.5px) scale(1)',
+        },
+      },
+      defaultProps: {
+        shrink: true,
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: 'standard',
+        margin: 'none',
+        fullWidth: true,
       },
     },
     MuiBadge: {

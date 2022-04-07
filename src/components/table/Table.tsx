@@ -14,8 +14,6 @@ import NoData from './no-data';
 import DefaultCell from './default-cell';
 import Header from './header';
 import Body from './body';
-import QuickSearch from './quick-search';
-import Pagination from './pagination';
 import Scrollbar from './scrollbar';
 import Spinner from './spinner';
 
@@ -85,12 +83,7 @@ const Table = <Type extends object>(props: TableProps<Type>): ReactElement => {
     getTableProps,
     headerGroups,
     prepareRow,
-    setGlobalFilter,
     page,
-    canPreviousPage,
-    canNextPage,
-    nextPage,
-    previousPage,
     state: { pageIndex, pageSize },
   } = useTable<Type>(
     {
@@ -120,22 +113,7 @@ const Table = <Type extends object>(props: TableProps<Type>): ReactElement => {
   }, [fetchData, isServerSide, pageIndex, pageSize]);
 
   return (
-    <Card
-      title={title}
-      action={
-        <Box display="flex" alignItems="center" gap="1rem">
-          <QuickSearch setGlobalFilter={setGlobalFilter} />
-          <Pagination
-            pageIndex={pageIndex}
-            rowsPerPage={pageSize}
-            totalRows={rowsCount}
-            isNextEnabled={canNextPage}
-            isPreviousEnabled={canPreviousPage}
-            onNext={nextPage}
-            onPrevious={previousPage}
-          />
-        </Box>
-      }>
+    <Card title={title}>
       <Box position="relative">
         <Scrollbar>
           <TableContainer {...getTableProps()} aria-label={name} isLoading={isLoading}>

@@ -9,18 +9,18 @@ import AdapterMoment from '@mui/lab/AdapterMoment';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MuiDesktopDatePicker from '@mui/lab/DesktopDatePicker';
 
-import { useMetaError } from 'hooks';
-
 interface InputProps extends MuiInputProps {
   'data-testid': string;
 }
+
+type DateFormat = 'MM/DD/YYYY' | 'YYYY/MM/DD';
 
 interface DatePickerProps {
   name: string;
   mask?: string;
   label?: string;
-  format?: DateFormat;
   helperText?: string;
+  format?: DateFormat;
   defaultValue?: string | null;
   maxDate?: Moment;
   minDate?: Moment;
@@ -39,9 +39,7 @@ const DatePicker = (props: DatePickerProps): ReactElement => {
   } = props;
   const {
     field: { ref, ...field },
-    fieldState,
   } = useController({ name, defaultValue });
-  const { hasError, errorMessage } = useMetaError(fieldState);
 
   return (
     <LocalizationProvider dateAdapter={AdapterMoment}>
@@ -59,13 +57,7 @@ const DatePicker = (props: DatePickerProps): ReactElement => {
           } as InputProps
         }
         renderInput={(params) => {
-          return (
-            <TextField
-              {...params}
-              error={hasError}
-              helperText={hasError ? errorMessage : helperText}
-            />
-          );
+          return <TextField {...params} helperText={helperText} />;
         }}
       />
     </LocalizationProvider>
