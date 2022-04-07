@@ -1,6 +1,6 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from "react";
 
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 
 type PropsWithChildren<T = object> = T & {
   children?: ReactNode;
