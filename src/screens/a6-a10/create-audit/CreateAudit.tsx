@@ -13,7 +13,6 @@ import {
   Select,
   Stack,
   styled,
-  Typography,
 } from '@mui/material';
 import PageTitle from 'components/page-title';
 import DefinitionList, { DefinitionItem } from 'components/definition-list';
@@ -26,21 +25,6 @@ const FormContainer = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
-});
-
-const DefinitionContain = styled(Box)({
-  gridColumn: '2 / 2',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10rem',
-});
-
-const Definition = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '1rem',
-  gap: '.5rem',
-  textAlign: 'left',
 });
 
 const CreateAudit = (): ReactElement => {
