@@ -12,10 +12,6 @@ const theme = createTheme({
     primary: {
       main: '#2196f3',
     },
-    neutral: {
-      main: '#64748B',
-      contrastText: '#fff',
-    },
     background: {
       default: '#F5F5F5 ',
     },
@@ -79,6 +75,11 @@ export default createTheme(theme, {
     MuiCheckbox: {
       defaultProps: {
         color: 'warning',
+      },
+    },
+    MuiSelect: {
+      defaultProps: {
+        variant: 'standard',
       },
     },
     MuiRadio: {

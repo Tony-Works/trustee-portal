@@ -1,34 +1,35 @@
 import type { CellProps, Column } from 'react-table';
-import { Scheme } from 'models';
+import { SchemeInvestigation } from 'models';
 import { ReactNode } from 'react';
 import { Button, Stack } from '@mui/material';
 
-export const data: Scheme[] = [
+export const data: SchemeInvestigation[] = [
   {
-    requestDt: '13/12/2021 09:23:12',
-    referenceNo: '66373384848788',
+    audit: 'Audit',
+    referenceNo: '2625e636336',
+    dateCmm: '18/12/2021',
+    endDtAudt: '20/21/2021',
     status: 'Pending',
-    preparerId: 'Preparer A',
-    supervisorId: 'Supervisor A',
+    preparer: 'Preparer A',
+    supervsor: 'Preparer A',
   },
 ];
 
-export const columns: Column<Scheme>[] = [
-  { Header: 'Request Date', accessor: 'requestDt' },
+export const columns: Column<SchemeInvestigation>[] = [
+  { Header: 'Audit / Investigation', accessor: 'audit' },
   { Header: 'Reference Number', accessor: 'referenceNo' },
+  { Header: 'Date of Commencement Of the Audit / Investigation', accessor: 'dateCmm' },
+  { Header: 'End Date of Audit Investigation', accessor: 'endDtAudt' },
   { Header: 'Status', accessor: 'status' },
-  { Header: 'Preparer User ID', accessor: 'preparerId' },
-  { Header: 'Supervisor  User ID', accessor: 'supervisorId' },
+  { Header: 'Preparer User ID', accessor: 'preparer' },
+  { Header: 'Supervisor  User ID', accessor: 'supervsor' },
   {
     Header: 'Action',
     disableSortBy: true,
-    Cell: (_cellProps: CellProps<Scheme>): ReactNode => {
+    Cell: (_cellProps: CellProps<SchemeInvestigation>): ReactNode => {
       return (
         <Stack spacing={2} direction="row">
-          <Button variant="outlined" sx={{ borderColor: '#f73378', color: '#f73378' }}>
-            Delete
-          </Button>
-          <Button variant="contained" color="warning">
+          <Button variant="contained" color="primary">
             View
           </Button>
         </Stack>
