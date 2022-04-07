@@ -23,9 +23,9 @@ const AppRoutes = (): ReactElement => {
       <Route path="upload">
         <Route index element={<SchemeAudit />} />
         <Route path="create-audit" element={<CreateAudit />} />
-        <Route path="brochure" element={<PrincipalBrochure />} />
         <Route path="new-upload" element={<SchemeNewUpload />} />
         <Route path="scheme-pending" element={<SchemePendingDocuments />} />
+        <Route path="brochure" element={<PrincipalBrochure />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
